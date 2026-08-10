@@ -1,0 +1,10 @@
+Genotype-level de novo QC summary
+=================================
+
+Initial strict genotype candidates       446
+Ordinary SNV candidates                  210
+DP >= 10 in trio                         182
+GQ >= 30 in trio                         182
+Proband VAF 0.30-0.70                    182
+Parental ALT fraction < 0.10             179
+PL supports expected genotype            179
