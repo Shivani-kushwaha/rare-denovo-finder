@@ -55,19 +55,15 @@ Final candidate VCF
 Individual scripts can also be run separately if a specific filtering stage needs to be inspected.
 
 ## Results
--------------------------------------------------------------
-| Filtering step  |                    | Variants remaining |
--------------------------------------------------------------
-| Strict Mendelian-pattern candidates       | 446 |
-| SNVs after excluding symbolic '* alleles  | 210 |
-| Genotype-QC passing                       | 179 |
-| Site-QC passing                           | 169 |
-| Prioritized cohort singletons (AC=1)      |  90 |
----------------------------------------------------
-
+Filtering step                                 Remaining Variant 
+Strict Mendelian-pattern candidates               446
+SNVs after excluding symbolic '*' alleles         210
+Genotype-QC passing                               179
+Site-QC passing                                   169
+Prioritized cohort singletons (AC=1)               99
 
 ## Repository structure
-rare_denovo-finder/
+rare_denovo-finder
 ├── README.md
 ├── data/
 │   ├── biallelic.vcf
