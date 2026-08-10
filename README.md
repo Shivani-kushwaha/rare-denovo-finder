@@ -1,11 +1,9 @@
 # De novo variant identification from a rare-disease trio
 
-A reproducible workflow for identifying **strict de novo SNV candidates** from a trio whole-genome VCF and filtering them to a high-confidence candidate set using genotype-level, site-level, and cohort-level evidence.
-
-The analysis uses the **CDL-068-99 trio**: proband CDL-068-99P, father CDL-068-99F, and mother CDL-068-99M. The supplied VCF was decomposed into biallelic records using bcftools norm -m -.
+- A reproducible workflow for identifying **strict de novo SNV candidates** from a trio whole-genome VCF and filtering them to a high-confidence candidate set using genotype-level, site-level, and cohort-level evidence.
+- The analysis uses the trio probing, father, and mother. The supplied VCF was decomposed into biallelic records using bcftools norm -m -.
 
 ## Method summary
-
 **Task 1 — Strict de novo identification.**  
 Variants are selected when both parents are homozygous reference (0/0) and the proband is heterozygous (0/1). Symbolic spanning-deletion alleles (*) are excluded and the analysis is restricted to SNVs.
 
@@ -35,8 +33,8 @@ After technical QC, cohort singletons (AC=1) are prioritized as the most likely 
 
 ## Quick start
 - Place the input files in the data folder:
-1. data/biallelic_CDL-068-99.vcf
-2. data/CDL-068-99.ped
+1. data/biallelic.vcf
+2. data/sample.ped
 
 - Run the complete workflow from the repository root:
 bash scripts/run_all.sh
@@ -72,8 +70,8 @@ Individual scripts can also be run separately if a specific filtering stage need
 rare_denovo-finder/
 ├── README.md
 ├── data/
-│   ├── biallelic_CDL-068-99.vcf
-│   └── CDL-068-99.ped
+│   ├── biallelic.vcf
+│   └── sample.ped
 ├── scripts/
 │   ├── find_denovo_candidates.py
 │   ├── filter_genotype_qc.py
