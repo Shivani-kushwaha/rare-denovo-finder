@@ -1,0 +1,14 @@
+Site-level de novo QC summary
+============================
+
+Input genotype-QC candidates         179
+FILTER = PASS                        179
+QUAL >= 30                           179
+QD >= 2                              175
+MQ >= 40                             169
+FS <= 60                             169
+SOR <= 3                             169
+MQRankSum >= -12.5                   169
+ReadPosRankSum >= -8                 169
+
+Final site-QC candidates: 169
