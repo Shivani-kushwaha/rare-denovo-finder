@@ -1,4 +1,4 @@
-# De novo variant identification from a rare-disease trio
+# De novo variant identification
 
 - A reproducible workflow for identifying **strict de novo SNV candidates** from a trio whole-genome VCF and filtering them to a high-confidence candidate set using genotype-level, site-level, and cohort-level evidence.
 - The analysis uses the trio probing, father, and mother. The supplied VCF was decomposed into biallelic records using bcftools norm -m -.
