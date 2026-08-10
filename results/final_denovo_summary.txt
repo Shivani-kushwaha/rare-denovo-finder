@@ -1,0 +1,6 @@
+De novo singleton filtering summary
+===================================
+
+Input site-QC candidates : 169
+AC = 1 singleton SNVs    : 90
+AC > 1 removed           : 79
