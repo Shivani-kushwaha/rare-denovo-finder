@@ -60,7 +60,7 @@ Strict Mendelian-pattern candidates               446
 SNVs after excluding symbolic '*' alleles         210
 Genotype-QC passing                               179
 Site-QC passing                                   169
-Prioritized cohort singletons (AC=1)               99
+Prioritized cohort singletons (AC=1)               90
 
 ## Repository structure
 rare_denovo-finder
