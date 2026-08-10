@@ -1,0 +1,14 @@
+.DS_Store
+
+# Large/raw input data
+data/
+*.vcf
+*.vcf.gz
+*.tbi
+
+# Generated result VCFs
+results/*.vcf
+
+# Python
+__pycache__/
+*.pyc

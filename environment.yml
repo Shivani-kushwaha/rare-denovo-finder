@@ -1,0 +1,13 @@
+name: rare_denovo
+channels:
+- conda-forge
+- bioconda
+dependencies:
+- python=3.11
+- bcftools
+- samtools
+- bedtools
+- cyvcf2
+- pandas
+- matplotlib
+- seaborn
