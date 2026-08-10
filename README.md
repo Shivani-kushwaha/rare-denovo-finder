@@ -86,5 +86,5 @@ rare_denovo-finder/
     ├── site_qc_candidates.vcf
     └── final_denovo_candidates.vcf
 
-
-Tasks 3–6, including the expected number of true-positive de novo variants, sources of false-positive calls, expected structural variant burden, and CNV filtering strategy, are discussed in the accompanying report.
+- run_all.sh reproduces the final filtering workflow; metric profiling scripts are provided separately to inspect distributions used to justify thresholds.
+- Tasks 3–6, including the expected number of true-positive de novo variants, sources of false-positive calls, expected structural variant burden, and CNV filtering strategy, are discussed in the accompanying report.
