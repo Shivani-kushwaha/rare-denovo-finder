@@ -2,9 +2,21 @@
 
 set -euo pipefail
 
-VCF=${VCF:-data/biallelic_CDL-068-99.vcf}
-PED=${PED:-data/CDL-068-99.ped}
+VCF=${VCF:-}
+PED=${PED:-}
 OUT_DIR=${OUT_DIR:-results}
+
+if [[ -z "$VCF" || -z "$PED" ]]; then
+  echo "Usage: VCF=<trio.vcf> PED=<trio.ped> [OUT_DIR=results] bash scripts/run_all.sh" >&2
+  exit 1
+fi
+
+for f in "$VCF" "$PED"; do
+  if [[ ! -f "$f" ]]; then
+    echo "Error: input file not found: $f" >&2
+    exit 1
+  fi
+done
 
 mkdir -p "$OUT_DIR"
 
@@ -16,7 +28,7 @@ python3 scripts/find_denovo_candidates.py \
 
 echo "=== Step 2: Genotype-level QC ==="
 python3 scripts/filter_genotype_qc.py \
-  --vcf "$VCF" \
+  --vcf "$OUT_DIR/denovo_candidates.vcf" \
   --ped "$PED" \
   --output "$OUT_DIR/genotype_qc_candidates.vcf" \
   --summary "$OUT_DIR/genotype_qc_summary.txt"
