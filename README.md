@@ -37,13 +37,9 @@ Place the input files in the 'data/' folder:
 - 'data/CDL-068-99.ped'
 
 Run the complete workflow from the repository root:
-```bash
-bash scripts/run_all.sh
-```
 
-To run on a different trio, override the defaults:
 ```bash
-VCF=path/to/your.vcf PED=path/to/your.ped bash scripts/run_all.sh
+VCF=data/biallelic_CDL-068-99.vcf PED=data/CDL-068-99.ped bash scripts/run_all.sh
 ```
   
 ## The wrapper executes:
