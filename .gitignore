@@ -11,4 +11,4 @@ results/*.vcf
 
 # Python
 __pycache__/
-*.pyc
+*.pyc~$*
