@@ -47,6 +47,7 @@ VCF=path/to/your.vcf PED=path/to/your.ped bash scripts/run_all.sh
 ```
   
 ## The wrapper executes:
+```
 Input VCF
    ↓
 Strict de novo identification
@@ -58,6 +59,7 @@ Site-level QC
 Singleton (AC=1) prioritization
    ↓
 Final candidate VCF
+```
 
 ## Results
 Filtering step                                 Remaining Variant 
