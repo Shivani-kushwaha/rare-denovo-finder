@@ -16,6 +16,11 @@ def parse_args():
     )
 
     parser.add_argument(
+        "--ped", 
+        required=True, 
+        help="PED file defining the trio")
+
+    parser.add_argument(
         "--output",
         required=True,
         help="Output TSV containing candidate quality metrics"
@@ -133,7 +138,7 @@ def calculate_allele_balance(ref_depth, alt_depth):
     return alt_depth / total
 
 
-def profile_candidates(vcf_path, output_path):
+def profile_candidates(vcf_path, ped_path,output_path):
 
     mother_index = None
     father_index = None
@@ -201,9 +206,14 @@ def profile_candidates(vcf_path, output_path):
                 samples = header[9:]
 
                 # These are the sample IDs from this specific trio.
-                mother_id = "CDL-068-99M"
-                father_id = "CDL-068-99F"
-                proband_id = "CDL-068-99P"
+                mother_id = father_id = proband_id = None
+                for ped_line in open(ped_path):
+                    f = ped_line.split()
+                    if len(f) >= 6 and f[5] == "2":
+                        proband_id, father_id, mother_id = f[1], f[2], f[3]
+                if proband_id is None:
+                    raise ValueError("No affected proband (phenotype=2) in PED.")
+                
 
                 if mother_id not in samples:
                     raise ValueError(f"{mother_id} not found in VCF.")
@@ -315,8 +325,9 @@ def main():
     args = parse_args()
 
     profile_candidates(
-        vcf_path=args.vcf,
-        output_path=args.output
+        args.vcf,
+        args.ped,
+        args.output
     )
 
 
