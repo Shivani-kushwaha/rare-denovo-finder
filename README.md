@@ -35,6 +35,7 @@ After technical QC, cohort singletons (AC=1) are prioritized as the most likely 
 Place the input files in the 'data/' folder:
 - 'data/biallelic_CDL-068-99.vcf'
 - 'data/CDL-068-99.ped'
+
 Run the complete workflow from the repository root:
 ```bash
 bash scripts/run_all.sh
